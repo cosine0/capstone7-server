@@ -14,5 +14,13 @@ $user = $_POST["Input_user"];
 $result = $mysqli->query("SELECT point FROM userinfo WHERE userid='".$user."';");
 
 
-echo (json_encode(array('point' => $row['point']), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+
+if(mysqli_num_rows($result) == 0)
+    echo (json_encode(array('point' => 333), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+else {
+    $row = mysqli_fetch_assoc($result);
+    echo (json_encode(array('pointReward' => $row['point']), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
+}
+
+
 ?>
