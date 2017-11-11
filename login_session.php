@@ -35,5 +35,3 @@ echo (json_encode(array('user_id' => "", 'user_name' => ""), JSON_UNESCAPED_UNIC
 		}
 	}
 }
-
-?>

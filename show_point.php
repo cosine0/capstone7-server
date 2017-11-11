@@ -21,6 +21,3 @@ else {
     $row = mysqli_fetch_assoc($result);
     echo (json_encode(array('pointReward' => $row['point']), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
 }
-
-
-?>
