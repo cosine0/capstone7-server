@@ -13,5 +13,5 @@ $user = $_POST["Input_user"];
 $point = $_POST["Input_point"];
 $ad = $_POST["Input_ad"];
 
-$result = $mysqli->query("UPDATE userinfo SET point = point + '$point' WHERE userid='$user';");
+$result = $mysqli->query("UPDATE `userinfo` SET `point` = `point` + '$point' WHERE `userid`='$user';");
 $result2 = $mysqli->query("INSERT INTO `loginfo` VALUES (NULL, '$user', '$ad', NULL);");
