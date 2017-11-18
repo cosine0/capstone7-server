@@ -8,10 +8,8 @@ mysqli_set_charset($mysqli, 'utf8');
 $currlati = $_POST["latitude"];
 $currlong = $_POST["longitude"];
 $curralti = $_POST["altitude"];
-$latitudeOption = (float)$_POST["latitudeOption"];
-$longitudeOption = (float)$_POST["longitudeOption"];
 
-$result = $mysqli->query("SELECT `ad_no`, `name`, `latitude`, `longitude`, `altitude`, `bearing`, `width`, `height`, `banner_url`, `texture_url` FROM `ADinfo` WHERE ABS(`latitude`-$currlati) <= $latitudeOption AND ABS(`longitude`-$currlong) <= $longitudeOption;");
+$result = $mysqli->query("SELECT `object_no`, `typeName`, `ad_userid`, `latitude`, `longitude`, `altitude`, `bearing` FROM `3Dinfo` WHERE ABS(`latitude`-$currlati) <= 0.0002 AND ABS(`longitude`-$currlong) <= 0.0001;");
 
 $ads = array();
 while ($row = mysqli_fetch_assoc($result)) {
