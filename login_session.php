@@ -7,11 +7,8 @@ $pass = $_POST["Input_pass"];
 
 $result = $mysqli->query("SELECT userid, password, point, name FROM userinfo WHERE userid='" . $user . "';");
 
-
 if (mysqli_num_rows($result) == 0) {
-
     echo(json_encode(array('user_id' => "", 'user_name' => ""), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES));
-
 } else {
     while ($row = mysqli_fetch_assoc($result)) {
         if ($pass == $row['password']) {
